@@ -1,0 +1,4 @@
+{
+  "commentTranslate.targetLanguage": "en",
+  "i18n-ally.localesPaths": ["src/components/language"]
+}

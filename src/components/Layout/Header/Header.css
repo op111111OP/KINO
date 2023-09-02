@@ -1,0 +1,123 @@
+header {
+  min-height: 40px;
+  width: 1100px;
+  background-color: #2a2d34;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 50px 30px 50px;
+  box-shadow: 0 0 20px rgba(5, 5, 5, 0.8);
+}
+.link {
+  text-decoration: none;
+  color: #e3d2d2;
+}
+.link:hover {
+  color: #e3d2d2;
+}
+.box_logo {
+  display: flex;
+  gap: 30%;
+  align-items: center;
+}
+.link_logo {
+  font-weight: 900;
+  font-size: 22px;
+  letter-spacing: 5px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.box_registration {
+  display: flex;
+}
+.box_registration > * {
+  display: flex;
+}
+
+.link_registration {
+  padding-right: 5px;
+  margin: 0px 20px 0px 0px;
+}
+.link_come {
+  font-weight: 600;
+}
+/* поле пошуку */
+.search-label {
+  display: flex;
+  align-items: center;
+}
+.search-bar {
+  position: relative;
+}
+
+.search-text {
+  margin-right: 10px;
+}
+
+.search-input-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  background-color: black;
+  color: #e3d2d2;
+  padding: 10px 10px;
+  border: none;
+  outline: none;
+  width: 300px;
+  letter-spacing: 1px;
+}
+
+.faSearch_box {
+  width: 30px;
+  height: 38px;
+  position: absolute;
+  cursor: pointer;
+  right: 0px;
+  top: 0px;
+}
+.faSearch {
+  position: absolute;
+  right: 10px;
+  top: 12px;
+}
+
+.text_none_come {
+  padding-right: 5px;
+  display: flex;
+}
+
+/* поле пошуку and */
+@media (max-width: 1100px) {
+  .text_none_come {
+    display: none;
+  }
+  header {
+    width: 100vw;
+  }
+}
+@media (max-width: 750px) {
+  header {
+    align-items: normal;
+  }
+  .box_logo {
+    flex-direction: column;
+    gap: 30px;
+    align-items: normal;
+  }
+}
+@media (max-width: 450px) {
+  .faSearch {
+    right: 3vw;
+  }
+  .search-input {
+    width: 75vw;
+  }
+  header {
+    gap: 30px;
+    flex-direction: column;
+  }
+}

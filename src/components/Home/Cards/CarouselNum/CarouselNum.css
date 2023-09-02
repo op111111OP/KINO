@@ -1,0 +1,114 @@
+/* css 1 */
+/* .carousel_num {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 30px 40px 30px;
+}
+.card_num {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background: #2a2d34;
+  border-radius: 3px;
+  box-shadow: 0 0 20px rgba(23, 23, 23, 0.8);
+}
+.card_num:hover {
+  background: rgba(101, 134, 188, 0.99);
+}
+.card_num2 {
+  display: none;
+  cursor: auto;
+}
+.card_num12 {
+  cursor: auto;
+}
+.selected {
+  background: rgba(101, 134, 188, 0.99);
+} */
+/* css 1 and */
+/* css 2 */
+.carousel_num {
+  width: 634px;
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 0px 40px 40px;
+  overflow: hidden;
+  position: relative;
+}
+.card_numZ {
+  z-index: 5;
+  position: absolute;
+}
+.card_numZP {
+  right: 0;
+}
+.card_numZPOn {
+  right: 46px;
+}
+.card_numZLOn {
+  left: 46px;
+}
+.carousel_absolute {
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.card_num {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background: #2a2d34;
+  border-radius: 3px;
+  box-shadow: 0 0 20px rgba(23, 23, 23, 0.8);
+}
+
+.card_num:hover {
+  background: rgba(101, 134, 188, 0.99);
+}
+
+.selected {
+  background: rgba(101, 134, 188, 0.99);
+}
+/* css 2 and */
+@media (max-width: 1100px) {
+  .carousel_num {
+    margin: 40px 0px;
+  }
+}
+@media (max-width: 750px) {
+  .carousel_num {
+    width: 500px;
+  }
+  .card_num {
+    width: 26px;
+    height: 26px;
+  }
+}
+@media (max-width: 550px) {
+  .carousel_num {
+    width: 90vw;
+  }
+  .card_num {
+    width: 26px;
+    height: 26px;
+  }
+}
+@media (max-width: 450px) {
+  .carousel_num {
+    width: 95vw;
+
+    margin: 15px;
+  }
+  .card_num {
+    width: 22px;
+    height: 22px;
+  }
+}
