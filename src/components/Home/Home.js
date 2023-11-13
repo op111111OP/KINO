@@ -12,7 +12,7 @@ function Home() {
   useEffect(() => {
     const getData = async () => {
       const url =
-        "https://moviesdatabase.p.rapidapi.com/titles/x/upcoming?page=1";
+        "https://api.themoviedb.org/3/movie/103/recommendations?language=en-US&page=1";
       const resGenres = await fetchData(url); // fetchData знаходиться в api.js
       setData(resGenres);
     };
@@ -24,7 +24,7 @@ function Home() {
   return (
     <Layout>
       <div className="home">
-        <Carousel />
+        {/* <Carousel /> */}
         <div className="home_content">
           <Menu />
           <Cards />

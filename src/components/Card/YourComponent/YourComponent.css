@@ -1,0 +1,71 @@
+.showBlockCast-button {
+  position: relative;
+  background-color: inherit;
+  border: 1px solid white;
+  width: 20%;
+  height: 30px;
+  margin: 20px 0px 0px 30px;
+}
+
+.showBlockCast-button:hover {
+  cursor: pointer;
+}
+.cast_box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.cast {
+  gap: 0 20px;
+  padding: 15px;
+  display: flex;
+  width: 90%;
+  flex-wrap: wrap;
+}
+.img-box {
+  overflow: hidden;
+  max-width: 350px;
+  max-height: 500px;
+  min-width: 300px;
+}
+.img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+.text-overview-box {
+  transition: all 500ms;
+  position: relative;
+}
+
+.text-overview-box:hover {
+  cursor: pointer;
+}
+
+.text-overview {
+  position: relative;
+}
+
+.text-overview-i {
+  position: absolute;
+  left: -20px;
+}
+
+.showBlock-overview-img {
+  display: flex;
+  left: -100px;
+  bottom: 4vh;
+  z-index: 15;
+  border-top: 2px solid orange;
+  position: absolute;
+  background: rgb(14, 14, 14);
+  padding: 5px;
+}
+.TriangleDown {
+  transform: rotate(-180deg);
+  transition: all 0.5s;
+}
+.TriangleRight {
+  transition: all 0.5s;
+  transform: rotate(-90deg);
+}

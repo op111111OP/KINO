@@ -17,17 +17,17 @@ const Carousel = () => {
   useEffect(() => {
     const getData = async () => {
       const urls = [
-        "https://moviesdatabase.p.rapidapi.com/titles/tt10914400",
-        "https://moviesdatabase.p.rapidapi.com/titles/tt17078556",
-        "https://moviesdatabase.p.rapidapi.com/titles/tt19223146",
-        "https://moviesdatabase.p.rapidapi.com/titles/tt19368748",
-        "https://moviesdatabase.p.rapidapi.com/titles/tt19878326",
-        "https://moviesdatabase.p.rapidapi.com/titles/tt13103328",
-        "https://moviesdatabase.p.rapidapi.com/titles/tt20217220",
-        "https://moviesdatabase.p.rapidapi.com/titles/tt10767052",
-        "https://moviesdatabase.p.rapidapi.com/titles/tt19892236",
-        "https://moviesdatabase.p.rapidapi.com/titles/tt10994300",
-        "https://moviesdatabase.p.rapidapi.com/titles/tt10209920",
+        //   "https://moviesdatabase.p.rapidapi.com/titles/tt10914400",
+        //   "https://moviesdatabase.p.rapidapi.com/titles/tt17078556",
+        //   "https://moviesdatabase.p.rapidapi.com/titles/tt19223146",
+        //   "https://moviesdatabase.p.rapidapi.com/titles/tt19368748",
+        //   "https://moviesdatabase.p.rapidapi.com/titles/tt19878326",
+        //   "https://moviesdatabase.p.rapidapi.com/titles/tt13103328",
+        //   "https://moviesdatabase.p.rapidapi.com/titles/tt20217220",
+        //   "https://moviesdatabase.p.rapidapi.com/titles/tt10767052",
+        //   "https://moviesdatabase.p.rapidapi.com/titles/tt19892236",
+        //   "https://moviesdatabase.p.rapidapi.com/titles/tt10994300",
+        //   "https://moviesdatabase.p.rapidapi.com/titles/tt10209920",
       ];
 
       const responses = await Promise.all(urls.map((url) => fetchData(url))); // fetchData знаходиться в api.js
