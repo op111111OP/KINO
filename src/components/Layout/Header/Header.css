@@ -89,8 +89,72 @@ header {
   padding-right: 5px;
   display: flex;
 }
+/*  */
+.api-card-box .img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.api-card {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.api-card-text {
+  background: #00000066;
+  text-shadow: 0 0 2px #ffb300;
+}
+
+.api-card-box-text {
+  flex-direction: column;
+  bottom: 0;
+  width: 100%;
+  height: 45%;
+  z-index: 0;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.api-card-box {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  cursor: pointer;
+}
+
+.api-card-box:hover {
+  border: 2px solid rgba(184, 135, 11, 0);
+}
+
+.linc_card {
+  width: 20%;
+  display: flex;
+
+  align-items: center;
+}
+.img_404 {
+  background: radial-gradient(
+    circle at 100%,
+    #19055c,
+    #2d1a5d 50%,
+    #0c1d44 75%
+  );
+  min-width: 100%;
+  height: 200px;
+  font-size: 80px;
+}
 
 /* поле пошуку and */
+/* CarouselNum */
+.box-request {
+  align-items: center;
+}
+/* CarouselNum and */
 @media (max-width: 1100px) {
   .text_none_come {
     display: none;

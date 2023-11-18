@@ -1,62 +1,72 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useParams } from "react-router";
 import Layout from "../Layout";
 import { fetchData } from "../../Home/api";
+import "./Header.css";
+import CarouselNum from "../../Home/Cards/CarouselNum/CarouselNum";
 
 const SearchCard = () => {
-  const location = useLocation();
-  const searchValue = location.pathname.replace("/search/", ""); // Извлекаем значение параметра search из URL
   const [data, setData] = useState([]);
+  const tupe = useParams().tupe || "";
+  const [selectedPage, setSelectedPage] = useState("1");
+  const [page, setPage] = useState();
+  function valuesPage(i) {
+    setSelectedPage(i);
+  }
+  useEffect(() => {
+    if (data.total_pages >= 500) {
+      setPage(500);
+    } else {
+      setPage(data.total_pages);
+    }
+  }, [data]);
+
   useEffect(() => {
     const getData = async () => {
-      const url = `https://moviesdatabase.p.rapidapi.com/titles/search/title/${searchValue}?exact=false&titleType=movie`;
+      const url = `https://api.themoviedb.org/3/search/multi?query=${tupe}&include_adult=false&language=en-US&page=${selectedPage}`;
       const resGenres = await fetchData(url); // fetchData знаходиться в api.js
       setData((prevData) => resGenres);
     };
     getData();
-  }, [searchValue]);
-  console.log(data);
+  }, [selectedPage]);
+  //   console.log(data.results);
   return (
     <Layout>
-      <div className="cards cards_max">
-        {data.results &&
-          Array.isArray(data.results) &&
-          data.results.map((item, index) => (
-            <Link key={index} className="card link" to={`/post/${item.id}`}>
-              <div className="card_box">
-                <div className="card_img">
-                  {item.primaryImage && item.primaryImage.url && (
-                    <img src={item.primaryImage.url} alt="Image" />
+      <div className="box-request card_post_box">
+        <div className="api-card ">
+          {data.results &&
+            data.results.map((item) => (
+              <Link
+                key={item.id}
+                className="linc_card  link"
+                to={`/post/${item.media_type}/${item.id}`}
+              >
+                <div className="api-card-box">
+                  {item.poster_path ? (
+                    <img
+                      className="img"
+                      src={`https://image.tmdb.org/t/p/original${item.poster_path}`}
+                      alt=""
+                    />
+                  ) : (
+                    <div className="img_404"></div>
                   )}
-                </div>
-                <div className="card_text">
-                  <div className="card_titleText">
-                    {item.titleText.text !== null ? item.titleText.text : ""}
-                  </div>
-                  <div className="card_releaseDate">
-                    <div className="card_releaseDate_day">
-                      {item.releaseDate.day !== null
-                        ? item.releaseDate.day.toString().padStart(2, "0")
-                        : ""}
+                  <div className="api-card-box-text">
+                    <div className="api-card-text">
+                      {item.title ? item.title : item.name}
                     </div>
-                    <div className="card_releaseDate_month">
-                      {item.releaseDate.month !== null
-                        ? item.releaseDate.month.toString().padStart(2, "0")
-                        : ""}
+                    <div className="api-card-text">
+                      {item.release_date
+                        ? item.release_date
+                        : item.first_air_date}
                     </div>
-                    <div className="card_releaseDate_year">
-                      {item.releaseDate.year !== null
-                        ? item.releaseDate.year
-                        : ""}
-                    </div>
-                  </div>
-                  <div className="card_titleType">
-                    {item.titleType.text !== null ? item.titleType.text : ""}
                   </div>
                 </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            ))}
+        </div>
+        <CarouselNum valuesPage={valuesPage} page={page} />
       </div>
     </Layout>
   );

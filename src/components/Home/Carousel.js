@@ -9,35 +9,23 @@ import {
 
 // Home
 const Carousel = () => {
-  const [arrayIdImg, setArrayIdImg] = useState([]);
+  const [data, setData] = useState([]);
   const [leftOffset, setLeftOffset] = useState(0);
   const [moveLeft, setMoveLeft] = useState(true);
   const [intervalId, setIntervalId] = useState(null);
+  //   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  //   ширина екрана
 
   useEffect(() => {
     const getData = async () => {
-      const urls = [
-        //   "https://moviesdatabase.p.rapidapi.com/titles/tt10914400",
-        //   "https://moviesdatabase.p.rapidapi.com/titles/tt17078556",
-        //   "https://moviesdatabase.p.rapidapi.com/titles/tt19223146",
-        //   "https://moviesdatabase.p.rapidapi.com/titles/tt19368748",
-        //   "https://moviesdatabase.p.rapidapi.com/titles/tt19878326",
-        //   "https://moviesdatabase.p.rapidapi.com/titles/tt13103328",
-        //   "https://moviesdatabase.p.rapidapi.com/titles/tt20217220",
-        //   "https://moviesdatabase.p.rapidapi.com/titles/tt10767052",
-        //   "https://moviesdatabase.p.rapidapi.com/titles/tt19892236",
-        //   "https://moviesdatabase.p.rapidapi.com/titles/tt10994300",
-        //   "https://moviesdatabase.p.rapidapi.com/titles/tt10209920",
-      ];
+      const url =
+        "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&region=us";
 
-      const responses = await Promise.all(urls.map((url) => fetchData(url))); // fetchData знаходиться в api.js
-      setArrayIdImg(responses);
+      const resGenres = await fetchData(url); // fetchData знаходиться в api.js
+      setData(resGenres);
     };
     getData();
   }, []);
-  if (arrayIdImg[0] !== undefined) {
-    //  console.log(arrayIdImg[0]);
-  }
   //   --
   useEffect(() => {
     const interval = setInterval(() => {
@@ -73,19 +61,31 @@ const Carousel = () => {
   return (
     <div className="carousel">
       <div className="carousel_parts" style={blockStyle}>
-        {arrayIdImg.map((item, index) => (
-          <Link
-            key={index}
-            className={`carousel_part ${item.results.id} link`}
-            to={`/post/${item.results.id}`}
-          >
-            <img
-              src={item.results.primaryImage.url}
-              alt="Описание изображения"
-            />
-            <div className="carousel_text">{item.results.titleText.text}</div>
-          </Link>
-        ))}
+        {data.results &&
+          data.results.slice(0, 12).map((item, index) => (
+            <Link
+              key={index}
+              className={`carousel_part ${item.id} link`}
+              to={`/post/movie/${item.id}`}
+            >
+              <img
+                src={`https://image.tmdb.org/t/p/original${item.poster_path}`}
+                alt="Описание изображения"
+              />
+              <div className="carousel_text">
+                <div className="api-card-box-text">
+                  <div className="api-card-text">
+                    {item.title ? item.title : item.name}
+                  </div>
+                  <div className="api-card-text">
+                    {item.release_date
+                      ? item.release_date
+                      : item.first_air_date}
+                  </div>
+                </div>
+              </div>
+            </Link>
+          ))}
       </div>
       <BsFillArrowLeftSquareFill
         color="#202328"

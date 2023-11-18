@@ -15,7 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/post/:tupe/:id" element={<Card />} />
-        <Route path="/search/*" element={<SearchCard />} />
+        <Route path="/search/:tupe" element={<SearchCard />} />
         <Route path="*" element={<Notfound />} />
       </Routes>
     </BrowserRouter>

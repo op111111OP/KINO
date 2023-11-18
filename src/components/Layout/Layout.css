@@ -62,9 +62,9 @@ section {
   .fixed_box {
     left: 95vw;
   }
-  .carousel {
+  /* .carousel {
     display: none;
-  }
+  } */
   .home_content {
     flex-direction: column;
   }
