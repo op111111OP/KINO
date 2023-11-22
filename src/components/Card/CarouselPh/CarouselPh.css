@@ -1,0 +1,16 @@
+.carouselPh_box {
+  padding: 0 0 30px 0;
+}
+
+.carouselPh_img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 300px;
+  overflow: hidden;
+}
+.carouselPh_img > img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}

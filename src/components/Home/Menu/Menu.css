@@ -32,7 +32,7 @@
   font-size: 15px;
   cursor: pointer;
 }
-.text_menu_genre:hover {
+.menu_link:hover {
   color: darkgoldenrod;
 }
 .text_menu_By_genre {

@@ -16,31 +16,31 @@
   margin: 0px 0px 15px 0px;
   box-shadow: 0 0 15px rgba(17, 17, 17, 0.8);
 }
-.card_box_text {
+.cards_box_text {
   display: flex;
 }
-.card_box {
+.cards_box {
   position: relative;
 }
 
-.card_img {
+.cards_img {
   min-width: 250px;
   max-width: 250px;
   overflow: hidden;
   z-index: 10;
 }
-.card_img img {
+.cards_img img {
   width: 100%;
   object-fit: cover;
 }
-.card_text {
+.cards_text {
   padding: 15px;
   z-index: 10;
 }
-.card_text > *:not(:last-child) {
+.cards_text > *:not(:last-child) {
   margin: 0px 0px 10px 0px;
 }
-.card_releaseDate {
+.cards_releaseDate {
   display: flex;
   gap: 5px;
 }

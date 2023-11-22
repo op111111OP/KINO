@@ -15,10 +15,10 @@
     "react-icons": "^4.11.0",
     "react-intl": "^6.2.10",
     "react-redux": "^8.0.5",
+    "react-responsive-carousel": "^3.2.23",
     "react-router": "^6.4.3",
     "react-router-dom": "^6.4.3",
     "react-scripts": "5.0.1",
-    "react-slick": "^0.29.0",
     "react-use-window-localstorage": "^1.0.18",
     "slick-carousel": "^1.8.1",
     "web-vitals": "^2.1.4"

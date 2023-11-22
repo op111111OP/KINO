@@ -14,6 +14,7 @@ const SearchCard = () => {
   function valuesPage(i) {
     setSelectedPage(i);
   }
+
   useEffect(() => {
     if (data.total_pages >= 500) {
       setPage(500);
@@ -29,42 +30,47 @@ const SearchCard = () => {
       setData((prevData) => resGenres);
     };
     getData();
-  }, [selectedPage]);
-  //   console.log(data.results);
+  }, [selectedPage, tupe]);
+  console.log(data.results);
   return (
     <Layout>
       <div className="box-request card_post_box">
         <div className="api-card ">
           {data.results &&
-            data.results.map((item) => (
-              <Link
-                key={item.id}
-                className="linc_card  link"
-                to={`/post/${item.media_type}/${item.id}`}
-              >
-                <div className="api-card-box">
-                  {item.poster_path ? (
-                    <img
-                      className="img"
-                      src={`https://image.tmdb.org/t/p/original${item.poster_path}`}
-                      alt=""
-                    />
-                  ) : (
-                    <div className="img_404"></div>
-                  )}
-                  <div className="api-card-box-text">
-                    <div className="api-card-text">
-                      {item.title ? item.title : item.name}
+            data.results.map(
+              (item) =>
+                (item.poster_path || item.profile_path) && (
+                  <Link
+                    key={item.id}
+                    className="linc_card  link"
+                    to={`/post/${item.media_type}/${item.id}`}
+                  >
+                    <div className="api-card-box">
+                      {item.poster_path || item.profile_path ? (
+                        <img
+                          className="img"
+                          src={`https://image.tmdb.org/t/p/original${
+                            item.poster_path || item.profile_path
+                          }`}
+                          alt=""
+                        />
+                      ) : (
+                        <div className="img_404"></div>
+                      )}
+                      <div className="api-card-box-text">
+                        <div className="api-card-text">
+                          {item.title ? item.title : item.name}
+                        </div>
+                        <div className="api-card-text">
+                          {item.release_date
+                            ? item.release_date
+                            : item.first_air_date}
+                        </div>
+                      </div>
                     </div>
-                    <div className="api-card-text">
-                      {item.release_date
-                        ? item.release_date
-                        : item.first_air_date}
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            ))}
+                  </Link>
+                )
+            )}
         </div>
         <CarouselNum valuesPage={valuesPage} page={page} />
       </div>

@@ -1,11 +1,20 @@
 .card_post_box {
   display: flex;
-  min-height: calc(100vh - 170px);
-  /* Высота контейнера - высота футера  */
+  padding: 0 0 20px 0;
   background-color: #2a2d34;
   width: 100%;
+
+  position: relative;
+  flex-direction: column;
+}
+.card_box {
   margin: 15px 0px 15px 0px;
   box-shadow: 0 0 15px rgba(17, 17, 17, 0.8);
+  display: flex;
+  width: 100%;
+  background-color: #2a2d34;
+  min-height: calc(100vh - 170px);
+  /* Высота контейнера - высота футера  */
   position: relative;
   flex-direction: column;
 }
@@ -28,6 +37,9 @@
   padding: 15px;
   z-index: 10;
 }
+.card_text > * {
+  margin: 0px 0px 7px 0px;
+}
 .card_genres_box {
   display: flex;
   gap: 5px;
@@ -36,3 +48,27 @@
   display: flex;
   gap: 5px;
 }
+.card_overview {
+  line-height: 1.4em;
+}
+/* videos */
+.videos {
+  width: 100%;
+  margin: 0px auto; /* Центрируйте контейнер */
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* Задайте соотношение сторон видео (высота / ширина * 100%) */
+  overflow: hidden;
+}
+
+.iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* videos and */

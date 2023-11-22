@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { BsList } from "react-icons/bs";
 import "./Menu.css";
 import { fetchData } from "../api";
+import { Link } from "react-router-dom";
 // Home
 const Menu = () => {
   const [isOpen, setIsOpen] = useState(window.innerWidth >= 1101);
@@ -52,12 +53,15 @@ const Menu = () => {
             {Array.isArray(arrayGenresMovie.genres) &&
               arrayGenresMovie.genres.map((item, index) => (
                 <div
+                  onClick={toggleMenu}
                   className={`text_menu_genre ${
                     index === 0 ? "first_item" : ""
                   }`}
                   key={index}
                 >
-                  {item.name}
+                  <Link className="menu_link link" to={`/movie/${item.id}`}>
+                    {item.name}
+                  </Link>
                 </div>
               ))}
           </div>
@@ -66,12 +70,15 @@ const Menu = () => {
             {Array.isArray(arrayGenresTv.genres) &&
               arrayGenresTv.genres.map((item, index) => (
                 <div
+                  onClick={toggleMenu}
                   className={`text_menu_genre ${
                     index === 0 ? "first_item" : ""
                   }`}
                   key={index}
                 >
-                  {item.name}
+                  <Link className="menu_link link" to={`/tv/${item.id}`}>
+                    {item.name}
+                  </Link>
                 </div>
               ))}
           </div>
