@@ -3,6 +3,7 @@
 // SearchCard
 // Cards
 // CardPerson
+// Registration
 
 const options = {
   method: "GET",
@@ -12,7 +13,7 @@ const options = {
       "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjNDZjNmEyYmZkNmQ1MDRiODY0YzIzMTI2NzM3MThhNSIsInN1YiI6IjY1MjQxYmMzZmQ2MzAwMDExYzc3ZGE2MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.d6UJmamV2guxBJvRTiiSEVqCqS4jkO545CMafUEV8ZQ",
   },
 };
-// 'https://api.themoviedb.org/3/genre/movie/list?language=en'
+
 const fetchData = async (url) => {
   try {
     const response = await fetch(url, options);

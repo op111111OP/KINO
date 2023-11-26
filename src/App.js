@@ -9,6 +9,7 @@ import SearchCard from "./components/Layout/Header/SearchCard";
 // import Post from "./components/Post/Post";
 import Notfound from "./components/Notfound/Notfound";
 import CardPerson from "./components/CardPerson/CardPerson";
+import RegistrationValide from "./components/RegistrationValide/RegistrationValide";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/:tupe/:id" element={<Home />} />
         <Route path="/post/:tupe/:id" element={<Card />} />
+        <Route path="/registration" element={<RegistrationValide />} />
         <Route path="/post/person/:id" element={<CardPerson />} />
         <Route path="/search/:tupe" element={<SearchCard />} />
         <Route path="*" element={<Notfound />} />

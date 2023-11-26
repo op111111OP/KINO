@@ -72,3 +72,44 @@
 }
 
 /* videos and */
+/* seson */
+
+.text-overview-box_box {
+  margin: 2px 0px 0px 0px;
+}
+
+.text-overview-i {
+  position: absolute;
+  left: -20px;
+}
+.showBlock-overview {
+  display: flex;
+  left: 250px;
+  top: -250px;
+  z-index: 10;
+  border-top: 2px solid orange;
+  position: absolute;
+  background: rgb(14, 14, 14);
+  padding: 5px;
+  justify-content: space-between;
+  gap: 5px;
+}
+.showBlock-overview_text {
+  max-width: 200px;
+  max-height: 500px;
+  line-height: 1.4em;
+}
+.img-box_seson {
+  overflow: hidden;
+  max-width: 250px;
+  max-height: 400px;
+  min-width: 200px;
+  background-color: darkgoldenrod;
+}
+
+.showBlock-overview > .img-box_seson > img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+/* seson and */

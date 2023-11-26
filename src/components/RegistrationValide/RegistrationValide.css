@@ -1,0 +1,30 @@
+.form_box {
+  margin: 15px 0px 15px 0px;
+  box-shadow: 0 0 15px rgba(17, 17, 17, 0.8);
+  display: flex;
+  width: 100%;
+  background-color: #2a2d34;
+  min-height: calc(100vh - 170px);
+  /* Высота контейнера - высота футера  */
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+.form_h1 {
+  font-size: 50px;
+}
+.form_form {
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.form_button {
+  background: rgb(81, 81, 253);
+  width: 100%;
+}
+.form_link {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

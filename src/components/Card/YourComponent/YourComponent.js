@@ -1,14 +1,20 @@
 import React, { useState } from "react";
 import "./YourComponent.css";
-import { RiArrowDownSFill, VscTriangleDown } from "react-icons/vsc";
+import { VscTriangleDown } from "react-icons/vsc";
 function YourComponent({ ApiCredits }) {
   const [showBlockCast, setShowBlockCast] = useState(false);
   const [showBlock, setShowBlock] = useState({});
 
-  const toggleShowBlock = (itemId) => {
+  const toggleShowBlockTrue = (itemId) => {
     setShowBlock((prevShowBlock) => ({
       ...prevShowBlock,
-      [itemId]: !prevShowBlock[itemId],
+      [itemId]: true,
+    }));
+  };
+  const toggleShowBlockFalse = (itemId) => {
+    setShowBlock((prevShowBlock) => ({
+      ...prevShowBlock,
+      [itemId]: false,
     }));
   };
 
@@ -28,8 +34,8 @@ function YourComponent({ ApiCredits }) {
               <div key={item.id} className="text-overview-box">
                 <div className="text-overview">
                   <div
-                    onMouseEnter={() => toggleShowBlock(item.id)}
-                    onMouseLeave={() => toggleShowBlock(item.id)}
+                    onMouseEnter={() => toggleShowBlockTrue(item.id)}
+                    onMouseLeave={() => toggleShowBlockFalse(item.id)}
                   >
                     {item.profile_path && (
                       <VscTriangleDown

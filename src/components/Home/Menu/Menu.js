@@ -9,7 +9,9 @@ const Menu = () => {
   const [arrayGenresMovie, setArrayGenresMovie] = useState("");
   const [arrayGenresTv, setArrayGenresTv] = useState("");
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
+    if (window.innerWidth <= 1101) {
+      setIsOpen(!isOpen);
+    }
   };
 
   useEffect(() => {

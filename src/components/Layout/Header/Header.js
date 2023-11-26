@@ -4,6 +4,7 @@ import "./Header.css";
 import SearchBar from "./SearchBar";
 import { FcFilm } from "react-icons/fc";
 import { PersonPlusFill, PersonVcardFill } from "react-bootstrap-icons";
+// import Registration from "./Registration/Registration";
 
 // Layout
 
@@ -18,7 +19,8 @@ function Header() {
         <SearchBar />
       </div>
       <div className="box_registration">
-        <Link className="link link_registration" to="/posts">
+        {/* <Registration /> */}
+        <Link className="link link_come" to="/registration">
           <div className="text_none_come">registration</div>
           <PersonPlusFill size={20} />
         </Link>
